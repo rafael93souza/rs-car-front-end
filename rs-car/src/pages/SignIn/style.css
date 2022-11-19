@@ -1,0 +1,78 @@
+.container-sign-in {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../assets/background-4.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.div-form-sign-in {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+
+}
+
+.form-sign-in {
+    width: 70%;
+    height: 70%;
+    padding: 3rem;
+    color: var(--color-scale-gray-0);
+    background-color: var(--color-scale-gray-10);
+    border-radius: 2rem;
+}
+
+.form-h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.logo-sign-in {
+    width: 30%;
+}
+
+.div-input-sign-in {
+    gap: 0.1rem;
+    margin-top: 1.5rem;
+}
+
+.input-sign-in {
+    all: unset;
+    box-sizing: border-box;
+    height: 2.5rem;
+    background-color: var(--color-scale-gray-8);
+    border-radius: 1rem;
+    padding: 0 1rem;
+}
+
+.label-sign-in {
+    font-weight: 600;
+}
+
+.btn-sign-in {
+    all: unset;
+    border-radius: 2rem;
+    padding: 0.5rem 2rem;
+    width: 50%;
+    text-align: center;
+    background-color: var(--color-secundary-2);
+    color: var(--color-scale-gray-10);
+    cursor: pointer;
+    margin: auto;
+}
+
+.div-button-sign-in {
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.icon-show-password {
+    position: absolute;
+    right: 1.5rem;
+    top: 2.1rem;
+    cursor: pointer;
+}
