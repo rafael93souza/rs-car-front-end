@@ -30,6 +30,7 @@ function SignIn() {
 
             setItem("token", response.data.token)
             setItem("user", response.data.admin.id)
+            setItem("name", response.data.admin.nome)
             navigate("/dashboard");
         } catch (error) {
             console.log(error)
