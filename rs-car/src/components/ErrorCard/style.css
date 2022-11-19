@@ -1,0 +1,18 @@
+.div-error {
+    animation-name: slide;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    transform: translateY(-160%);
+}
+
+.icon-close-card {
+    cursor: pointer;
+}
+
+@keyframes slide {
+    from {}
+
+    to {
+        transform: translateY(0%);
+    }
+}
