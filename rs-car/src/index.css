@@ -121,3 +121,11 @@ button,
     bottom: 2rem;
     z-index: 2;
 }
+
+.container {
+    padding-top: 120px;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-scale-gray-10);
+    color: var(--color-scale-gray-1);
+}
