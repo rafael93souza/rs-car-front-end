@@ -24,9 +24,9 @@ function GraphicsMonthlySum({ title, styleClass, data, to }) {
                 <h5>{data.mes ? data.mes : "carregando..."}</h5>
 
                 <h1 className="h1-monthly-sum">{valueCard}</h1>
-                <Link to={to} className="link-monthly-sum">Ver mais</Link>
+                <a href={to} className="link-monthly-sum">Ver mais</a>
             </div>
-        </div>
+        </div >
     )
 }
 

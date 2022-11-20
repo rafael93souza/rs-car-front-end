@@ -2,17 +2,17 @@ import "./style.css";
 import { Chart, } from "react-google-charts";
 import { useEffect, useState } from "react";
 
-function SellersGraphics({ headerGraphics, data }) {
+function SellersGraphics({ title, headerGraphics, data }) {
     const options = {
         title: "Ranking de Vendas",
         chartArea: { width: "50%" },
         colors: ["#b80000"],
         hAxis: {
-            title: "Valores em R$",
+            title: headerGraphics[1],
             minValue: 0,
         },
         vAxis: {
-            title: "Vendedores",
+            title: headerGraphics[0],
         },
         legend: { position: "bottom" },
     };
@@ -31,7 +31,7 @@ function SellersGraphics({ headerGraphics, data }) {
 
     return (
         <div className="container-sellers-graphics flex-column-center">
-            <h1>Total de vendas por funcionários</h1>
+            <h1>{title}</h1>
 
             {dataGraphics.length &&
                 <Chart

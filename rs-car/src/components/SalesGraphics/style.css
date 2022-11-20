@@ -1,4 +1,4 @@
-.container-sellers-graphics {
+.container-sales-graphics {
     width: 98%;
     height: auto;
     background-color: var(--color-scale-gray-11);
@@ -8,6 +8,7 @@
     padding-bottom: 3rem;
     margin: 5rem auto;
     box-shadow: 1rem 1rem 1rem var(--color-scale-gray-7);
+
 }
 
 .container-sellers-graphics h1 {
