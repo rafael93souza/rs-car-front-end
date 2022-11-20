@@ -1,11 +1,11 @@
 import "./style.css";
 
-function Dashboard() {
+function Sales() {
     return (
         <div className="container">
-            <h1> Dashboard</h1>
+            <h1>Sales</h1>
         </div>
     )
 }
 
-export default Dashboard;
+export default Sales;
