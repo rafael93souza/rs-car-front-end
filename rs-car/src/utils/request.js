@@ -20,3 +20,7 @@ export async function getGraphicsMonthlySum() {
     const response = await api.get("/grafico/soma/mensal", { headers: getHeaders() });
     return response;
 }
+export async function getCarsAll() {
+    const response = await api.get("/carro", { headers: getHeaders() });
+    return response;
+}

@@ -1,0 +1,62 @@
+.thead {
+    width: 100%;
+    height: 50px;
+    font-size: 1.6rem;
+    box-shadow: 0.3rem 0.3rem 2rem var(--color-scale-gray-8);
+    cursor: default;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.thead-tr,
+.tbody-tr {
+    width: 90%;
+    margin-bottom: 1rem;
+}
+
+.thead-tr-th-cod,
+.tbody-tr-th-cod {
+    text-align: center;
+    width: 7%;
+    border-right: 1px solid var(--color-scale-gray-8);
+
+}
+
+.thead-tr-th-edit-delete {
+    width: 100%;
+    height: 4rem;
+}
+
+.tbody-tr-th-edit-delete {
+    width: 100%;
+    gap: 3rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem var(--color-scale-gray-8);
+}
+
+.tbody-tr-th-cod,
+.tbody-tr-th {
+    height: 4rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem var(--color-scale-gray-8);
+    font-size: 1.2rem;
+}
+
+.thead-tr-th,
+.tbody-tr-th {
+    width: 17%;
+    text-align: center;
+    border-right: 1px solid var(--color-scale-gray-8);
+    font-size: 1.2rem;
+}
+
+.table-cars {
+    padding-bottom: 2rem;
+    border-radius: 2rem;
+    width: 90%;
+    background-color: var(--color-scale-gray-10);
+    margin: auto;
+    box-shadow: 1rem 1rem 1rem var(--color-scale-gray-8);
+}

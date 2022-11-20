@@ -1,0 +1,30 @@
+.container-cars {
+    padding-top: 12rem;
+    width: 98.5vw;
+    min-height: 100vh;
+    background-color: var(--color-scale-gray-10);
+    color: var(--color-scale-gray-1);
+    padding-bottom: 3rem;
+}
+
+.div-cars-headers {
+    justify-content: space-between;
+    padding: 1rem 8rem;
+}
+
+.btn-add-car {
+    all: unset;
+    cursor: pointer;
+    width: 250px;
+    text-align: center;
+    font-size: 1.6rem;
+    border-radius: 1.5rem;
+    background-color: var(--color-secundary-2);
+    color: var(--color-scale-gray-10);
+    box-shadow: 0.1rem 0.1rem 0.1rem var(--color-scale-gray-8);
+    transition: 0.2s;
+}
+
+.btn-add-car:hover {
+    background-color: var(--color-secundary-1);
+}
