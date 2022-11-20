@@ -1,7 +1,18 @@
 .container-dashboard {
-    padding-top: 120px;
-    width: 100vw;
-    height: 100vh;
+    padding-top: 12rem;
+    width: 98.5vw;
+    min-height: 100vh;
     background-color: var(--color-scale-gray-10);
     color: var(--color-scale-gray-1);
+    padding-bottom: 3rem;
+}
+
+.div-cards-graphics-dashboard {
+    width: 98%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.container-div-graphics {
+    padding-top: 4rem;
 }

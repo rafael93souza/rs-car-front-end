@@ -1,6 +1,4 @@
 import { createContext, useContext, useState } from "react";
-import { useSales } from "./SalesContexts";
-import { useSellers } from "./SellersContexts";
 
 const GlobalContext = createContext({});
 
@@ -11,8 +9,7 @@ export function GlobalProvider(props) {
     const [componentModal, setComponentModal] = useState("");
     const [successCard, setSuccessCard] = useState("");
     const [errorCard, setErrorCard] = useState("");
-    const { sales, setSales } = useSales();
-    const { sellers, setSellers } = useSellers();
+    const [admin, setAdmin] = useState({});
 
     return (
         <GlobalContext.Provider
@@ -24,7 +21,9 @@ export function GlobalProvider(props) {
                 errorCard,
                 setErrorCard,
                 componentModal,
-                setComponentModal
+                setComponentModal,
+                admin,
+                setAdmin
             }}
         >
             {props.children}

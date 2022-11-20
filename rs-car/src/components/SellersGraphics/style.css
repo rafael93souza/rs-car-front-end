@@ -1,0 +1,15 @@
+.container-sellers-graphics {
+    width: 98%;
+    height: auto;
+    background-color: var(--color-scale-gray-11);
+    color: var(--color-secundary-2);
+    border-radius: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    margin: 5rem auto;
+    box-shadow: 1rem 1rem 1rem var(--color-scale-gray-7);
+}
+
+.container-sellers-graphics h1 {
+    margin-bottom: 2rem;
+}
