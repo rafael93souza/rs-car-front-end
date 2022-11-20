@@ -1,6 +1,6 @@
 .container-cars {
     padding-top: 12rem;
-    width: 98.5vw;
+    width: 100vw;
     min-height: 100vh;
     background-color: var(--color-scale-gray-10);
     color: var(--color-scale-gray-1);

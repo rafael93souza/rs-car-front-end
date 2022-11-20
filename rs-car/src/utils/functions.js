@@ -19,10 +19,17 @@ export function validateEmail(email) {
     return { status: true, email };
 }
 
-
-
 export function maskValues(value) {
     let valueTreat = `R$${(value / 100).toFixed(2).replace(".", ",")}`;
     valueTreat = valueTreat.replace(/(?=(\d{3})+(\D))\B/g, ".");
     return valueTreat;
+}
+
+export function formatDateLong(date) {
+    const formatterDate = Intl.DateTimeFormat("pt-BR", {
+        year: "numeric",
+        day: "2-digit",
+        month: "2-digit",
+    });
+    return formatterDate.format(new Date(date));
 }

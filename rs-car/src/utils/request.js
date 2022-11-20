@@ -24,3 +24,7 @@ export async function getCarsAll() {
     const response = await api.get("/carro", { headers: getHeaders() });
     return response;
 }
+export async function getSalesAll() {
+    const response = await api.get("/venda", { headers: getHeaders() });
+    return response;
+}
