@@ -70,3 +70,7 @@
     margin: auto;
     box-shadow: 1rem 1rem 1rem var(--color-scale-gray-8);
 }
+
+.thead-sellers {
+    width: 20%;
+}

@@ -33,3 +33,19 @@ export function formatDateLong(date) {
     });
     return formatterDate.format(new Date(date));
 }
+
+
+export function maskCPF(cpf) {
+    let value = cpf;
+    value = value.replace(/\D/g, "");
+    if (value.length < 5) {
+        value = value.replace(/^(\d{3})(\d)/, "$1.$2");
+    } else if (value.length < 7) {
+        value = value.replace(/^(\d{3})(\d)/, "$1.$2");
+    } else if (value.length < 10) {
+        value = value.replace(/^(\d{3})(\d{3})(\d)/, "$1.$2.$3");
+    } else {
+        value = value.replace(/^(\d{3})(\d{3})(\d{3})(\d)/, "$1.$2.$3-$4");
+    }
+    return value;
+}
