@@ -29,6 +29,7 @@ body {
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
+    width: 98.5vw;
 
     --color-secundary-1: #ff0000;
     --color-secundary-2: #b80000;

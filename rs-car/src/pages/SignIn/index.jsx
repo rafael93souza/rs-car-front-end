@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 function SignIn() {
     const [form, setForm] = useState({ email: "", password: "" });
     const [showPassword, setShowPassword] = useState(true);
-    const { successCard, errorCard, setErrorCard } = useGlobal();
+    const { successCard, errorCard, setErrorCard, setAdmin } = useGlobal();
     const navigate = useNavigate();
 
     async function handleSubmit(e) {
@@ -27,10 +27,10 @@ function SignIn() {
         }
         try {
             const response = await postLogin({ email: form.email, senha: form.password });
-
             setItem("token", response.data.token)
             setItem("user", response.data.admin.id)
             setItem("name", response.data.admin.nome)
+            setAdmin(response.data.admin)
             navigate("/dashboard");
         } catch (error) {
             console.log(error)
