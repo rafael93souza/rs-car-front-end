@@ -18,7 +18,7 @@ function Header() {
     }, [])
 
     return (
-        <>
+        <div>
             <header className="header">
                 <img className="image-header" src={logoHeader} alt="Imagem do logo RS CAR" />
                 <ul className="nav-ul-header flex-row">
@@ -60,7 +60,7 @@ function Header() {
                 />
             </header>
             <Outlet />
-        </>
+        </div>
     )
 }
 

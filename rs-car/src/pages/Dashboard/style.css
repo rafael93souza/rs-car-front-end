@@ -6,3 +6,9 @@
     color: var(--color-scale-gray-1);
     padding-bottom: 3rem;
 }
+
+.div-cards-graphics-dashboard {
+    width: 98%;
+    margin: auto;
+    justify-content: space-between;
+}

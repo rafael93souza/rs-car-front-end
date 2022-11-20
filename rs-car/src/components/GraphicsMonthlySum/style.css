@@ -1,0 +1,48 @@
+.card-monthly-sum {
+    padding-top: 1rem;
+    text-align: center;
+    width: 30%;
+    height: 200px;
+    border-radius: 4rem;
+    box-shadow: 1rem 1rem 1rem var(--color-scale-gray-7);
+    margin-bottom: 3rem;
+    color: var(--color-scale-gray-11);
+}
+
+.div-monthly-sum {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    background-color: var(--color-scale-gray-11);
+    color: var(--color-scale-gray-2);
+    padding: 1rem 2rem 2rem 2rem;
+    height: 74%;
+    border-radius: 0 0 4rem 4rem;
+    position: relative;
+}
+
+.current-sales {
+    background-color: var(--color-scale-gray-2);
+
+}
+
+.current-cars-sales {
+    background-color: var(--color-scale-gray-3);
+}
+
+.current-average-sales {
+    background-color: var(--color-scale-gray-4);
+}
+
+.h1-monthly-sum {
+    font-size: 4.5rem;
+    margin: auto;
+}
+
+.link-monthly-sum {
+    width: 100%;
+    color: var(--color-secundary-2);
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+
+}

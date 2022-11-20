@@ -18,3 +18,11 @@ export function validateEmail(email) {
     }
     return { status: true, email };
 }
+
+
+
+export function maskValues(value) {
+    let valueTreat = `R$${(value / 100).toFixed(2).replace(".", ",")}`;
+    valueTreat = valueTreat.replace(/(?=(\d{3})+(\D))\B/g, ".");
+    return valueTreat;
+}
