@@ -12,9 +12,6 @@ function Dashboard() {
         year: "numeric",
         month: "long"
     });
-
-    const { sales, setSales } = useSales()
-    const { sellers, setSellers } = useSellers();
     const [sellersGraphichs, setSellersGraphichs] = useState([]);
     const [salesGraphichs, setSalesGraphichs] = useState([]);
     const [graphichsMonthlySum, setGraphichsMonthlySum] = useState([]);
@@ -75,16 +72,16 @@ function Dashboard() {
                 <SalesGraphics
                     title='Total de vendas últimos meses'
                     headerGraphics={["Meses", "Total de vendas em R$ por mês"]}
-                    data={salesGraphichs}
+                    data={graphichsMonthlySum}
                 />
             </div>
 
 
             <div id="carros" className="container-div-graphics">
                 <SalesGraphics
-                    title='Total de carros vendidos últimos meses'
+                    title='Total de carros vendidos nos últimos meses'
                     headerGraphics={["Meses", "Total de unidades vendidas por mês"]}
-                    data={salesGraphichs}
+                    data={graphichsMonthlySum}
                 />
             </div>
 
@@ -92,7 +89,7 @@ function Dashboard() {
                 <SalesGraphics
                     title='Media de vendas dos últimos meses'
                     headerGraphics={["Meses", "Media de vendas em R$ por mês"]}
-                    data={salesGraphichs}
+                    data={graphichsMonthlySum}
                 />
             </div>
         </div>
