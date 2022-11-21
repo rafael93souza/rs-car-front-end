@@ -177,3 +177,12 @@ export function editDataArray(array, id, data) {
     localArray.splice(localArrayFind, 1, data);
     return localArray;
 }
+
+export function removeDataArray(array, id) {
+    let localArray = [...array];
+    let localArrayFind = localArray.findIndex((element) => {
+        return element.id === id
+    });
+    localArray.splice(localArrayFind, 1);
+    return localArray;
+}

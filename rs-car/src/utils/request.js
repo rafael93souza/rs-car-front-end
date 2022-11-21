@@ -58,3 +58,7 @@ export async function putCar(id, data) {
     const response = await api.put(`/carro/${id}`, { ...data }, { headers: getHeaders() });
     return response;
 }
+export async function deleteRegister(id, path,) {
+    const response = await api.delete(`/${path}/${id}`, { headers: getHeaders() });
+    return response;
+}

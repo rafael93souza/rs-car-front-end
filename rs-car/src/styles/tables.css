@@ -74,3 +74,11 @@
 .thead-sellers {
     width: 20%;
 }
+
+.tbody-tr-th-cod-sale {
+    text-align: center;
+    width: 7%;
+    border-right: 1px solid var(--color-scale-gray-8);
+    background-color: var(--color-secundary-2);
+    color: var(--color-scale-gray-10);
+}

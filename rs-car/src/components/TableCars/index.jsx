@@ -5,6 +5,7 @@ import iconDelete from "../../assets/icons/icon-trash-can.svg";
 import "./style.css";
 import { useGlobal } from "../../Contexts/GlobalContexts";
 import FormRegisterCars from "../FormRegisterCars";
+import CardDelete from "../CardDelete";
 
 function TableCars() {
     const { cars, setCars, setCar } = useCars()
@@ -12,6 +13,11 @@ function TableCars() {
 
     function handleEditCars(car) {
         setComponentModal(<FormRegisterCars car={car} />)
+        setShowModal(true)
+    }
+
+    function handleDeleteCars(car) {
+        setComponentModal(<CardDelete id={car.id} name={car.modelo} path="carro" title="carro" array={cars} setArray={setCars} />)
         setShowModal(true)
     }
 
@@ -34,7 +40,9 @@ function TableCars() {
                     {cars.map((car) => {
                         return (
                             <tr key={car.id}>
-                                <td className="tbody-tr-th-cod">{car.id}</td>
+                                <td className={car.vendido ? "tbody-tr-th-cod-sale" : "tbody-tr-th-cod"}>
+                                    {car.id}
+                                </td>
                                 <td className="tbody-tr-th">{car.modelo}</td>
                                 <td className="tbody-tr-th">{car.marca}</td>
                                 <td className="tbody-tr-th-cod">{car.ano}</td>
@@ -44,7 +52,8 @@ function TableCars() {
                                 <td className="tbody-tr-th-edit-delete">
                                     <img src={iconEdit} alt="Clique aqui para editar"
                                         onClick={() => handleEditCars(car)} />
-                                    <img src={iconDelete} atl="Clique aqui para excluir" />
+                                    <img src={iconDelete} atl="Clique aqui para excluir"
+                                        onClick={() => handleDeleteCars(car)} />
                                 </td>
                             </tr>
                         )

@@ -3,14 +3,19 @@ import iconDelete from "../../assets/icons/icon-trash-can.svg";
 import { useGlobal } from "../../Contexts/GlobalContexts";
 import { useSellers } from "../../Contexts/SellersContexts";
 import { maskCPF } from "../../utils/functions";
+import CardDelete from "../CardDelete";
 import FormRegisterSeller from "../FormRegisterSellers";
 import "./style.css";
 
 function TableSellers() {
-    const { setSeller, sellers } = useSellers()
+    const { setSellers, sellers } = useSellers()
     const { setComponentModal, setShowModal } = useGlobal()
     function handleEditSeller(seller) {
         setComponentModal(<FormRegisterSeller seller={seller} />)
+        setShowModal(true)
+    }
+    function handleDeleteSellers(seller) {
+        setComponentModal(<CardDelete id={seller.id} name={seller.nome} path="vendedor" title="vendedor" array={sellers} setArray={setSellers} />)
         setShowModal(true)
     }
     return (
@@ -39,7 +44,9 @@ function TableSellers() {
                                         alt="Clique aqui para editar"
                                         onClick={() => handleEditSeller(seller)}
                                     />
-                                    <img src={iconDelete} atl="Clique aqui para excluir" />
+                                    <img src={iconDelete} atl="Clique aqui para excluir"
+                                        onClick={() => handleDeleteSellers(seller)}
+                                    />
                                 </td>
                             </tr>
                         )

@@ -1,18 +1,22 @@
-import { useCars } from "../../Contexts/CarsContexts";
-import { formatDateLong, maskValues } from "../../utils/functions";
 import iconEdit from "../../assets/icons/icon-pen-edit.svg";
 import iconDelete from "../../assets/icons/icon-trash-can.svg";
-import "./style.css";
-import { useSales } from "../../Contexts/SalesContexts";
 import { useGlobal } from "../../Contexts/GlobalContexts";
+import { useSales } from "../../Contexts/SalesContexts";
+import { formatDateLong, maskValues } from "../../utils/functions";
+import CardDelete from "../CardDelete";
 import FormRegisterSales from "../FormRegisterSales";
+import "./style.css";
 
 function TableSales() {
-    const { setSale, sales } = useSales()
+    const { setSales, sales } = useSales()
     const { setComponentModal, setShowModal } = useGlobal()
 
     function handleEditSale(sale) {
         setComponentModal(<FormRegisterSales sale={sale} />)
+        setShowModal(true)
+    }
+    function handleDeleteSales(sale) {
+        setComponentModal(<CardDelete id={sale.id} name={sale.modelo} path="venda" title="venda" array={sales} setArray={setSales} />)
         setShowModal(true)
     }
     return (
@@ -45,7 +49,9 @@ function TableSales() {
                                     <img src={iconEdit} alt="Clique aqui para editar"
                                         onClick={() => handleEditSale(sale)}
                                     />
-                                    <img src={iconDelete} atl="Clique aqui para excluir" />
+                                    <img src={iconDelete} atl="Clique aqui para excluir"
+                                        onClick={() => handleDeleteSales(sale)}
+                                    />
                                 </td>
                             </tr>
                         )
