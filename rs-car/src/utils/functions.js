@@ -19,6 +19,22 @@ export function validateEmail(email) {
     return { status: true, email };
 }
 
+export function validateCPF(cpf) {
+    if (!cpf) {
+        return { status: false, message: "O campo CPF é Obrigatório" };
+    }
+    const cpfSplit = cpf.split("");
+    const validecpf = cpfSplit.filter((item) => {
+        return item !== "." && item !== "-";
+    });
+    if (validecpf.length !== 11) {
+        return { status: false, message: "O CPF deve ser válido" };
+    }
+    cpf = validecpf.reduce((acum, value) => acum + value);
+
+    return { status: true, cpf };
+}
+
 export function maskValues(value) {
     let valueTreat = `R$${(value / 100).toFixed(2).replace(".", ",")}`;
     valueTreat = valueTreat.replace(/(?=(\d{3})+(\D))\B/g, ".");
@@ -34,7 +50,6 @@ export function formatDateLong(date) {
     return formatterDate.format(new Date(date));
 }
 
-
 export function maskCPF(cpf) {
     let value = cpf;
     value = value.replace(/\D/g, "");
@@ -48,4 +63,29 @@ export function maskCPF(cpf) {
         value = value.replace(/^(\d{3})(\d{3})(\d{3})(\d)/, "$1.$2.$3-$4");
     }
     return value;
+}
+
+export function treatValuesInputStrings(e) {
+    const caracter = ["!", "@", "#", "$", "%", "¨", "&", "*", "(", ")", "-", "_", "=", "+", ".", ",", ":", "<", ">", "|", "?", "{", "}", "[", "]", "/", "  ", "ª", "º", "°", '"', "'",];
+    let value = e;
+    let isSpecialCaracter = false;
+    for (let item of caracter) {
+        if (value.includes(item)) {
+            isSpecialCaracter = true;
+            break;
+        }
+    }
+    value = value.replace(/\d/g, "");
+    isSpecialCaracter ? (value = value.slice(0, value.length - 1)) : "";
+    e = value;
+    return e;
+}
+
+export function editDataArray(array, id, data) {
+    let localArray = [...array];
+    let localArrayFind = localArray.findIndex((element) => {
+        return element.id === id
+    });
+    localArray.splice(localArrayFind, 1, data);
+    return localArray;
 }

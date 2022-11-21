@@ -32,3 +32,11 @@ export async function getSellersAll() {
     const response = await api.get("/vendedor", { headers: getHeaders() });
     return response;
 }
+export async function postSellersAll(data) {
+    const response = await api.post("/vendedor", { ...data }, { headers: getHeaders() });
+    return response;
+}
+export async function putSellersAll(id, data) {
+    const response = await api.put(`/vendedor/${id}`, { ...data }, { headers: getHeaders() });
+    return response;
+}

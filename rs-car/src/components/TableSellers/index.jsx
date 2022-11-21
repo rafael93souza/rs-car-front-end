@@ -1,12 +1,18 @@
 import iconEdit from "../../assets/icons/icon-pen-edit.svg";
 import iconDelete from "../../assets/icons/icon-trash-can.svg";
+import { useGlobal } from "../../Contexts/GlobalContexts";
 import { useSellers } from "../../Contexts/SellersContexts";
 import { maskCPF } from "../../utils/functions";
+import FormRegisterSeller from "../FormRegisterSellers";
 import "./style.css";
 
 function TableSellers() {
-    const { setSellers, sellers } = useSellers()
-
+    const { setSeller, sellers } = useSellers()
+    const { setComponentModal, setShowModal } = useGlobal()
+    function handleEditSeller(seller) {
+        setComponentModal(<FormRegisterSeller seller={seller} />)
+        setShowModal(true)
+    }
     return (
         <div className="container-table-cars">
             <table className="table-cars">
@@ -28,7 +34,11 @@ function TableSellers() {
                                 <td className="tbody-tr-th thead-sellers">{seller.email}</td>
                                 <td className="tbody-tr-th thead-sellers">{maskCPF(seller.cpf)}</td>
                                 <td className="tbody-tr-th-edit-delete">
-                                    <img src={iconEdit} alt="Clique aqui para editar" />
+                                    <img
+                                        src={iconEdit}
+                                        alt="Clique aqui para editar"
+                                        onClick={() => handleEditSeller(seller)}
+                                    />
                                     <img src={iconDelete} atl="Clique aqui para excluir" />
                                 </td>
                             </tr>
