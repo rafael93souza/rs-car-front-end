@@ -4,10 +4,17 @@ import iconEdit from "../../assets/icons/icon-pen-edit.svg";
 import iconDelete from "../../assets/icons/icon-trash-can.svg";
 import "./style.css";
 import { useSales } from "../../Contexts/SalesContexts";
+import { useGlobal } from "../../Contexts/GlobalContexts";
+import FormRegisterSales from "../FormRegisterSales";
 
 function TableSales() {
     const { setSale, sales } = useSales()
+    const { setComponentModal, setShowModal } = useGlobal()
 
+    function handleEditSale(sale) {
+        setComponentModal(<FormRegisterSales sale={sale} />)
+        setShowModal(true)
+    }
     return (
         <div className="container-table-cars">
             <table className="table-cars">
@@ -25,7 +32,6 @@ function TableSales() {
                 </thead>
                 <tbody>
                     {sales.map((sale) => {
-                        console.log(sale)
                         return (
                             <tr key={sale.id}>
                                 <td className="tbody-tr-th-cod">{sale.id}</td>
@@ -36,7 +42,9 @@ function TableSales() {
                                 <td className="tbody-tr-th-cod">{sale.placa}</td>
                                 <td className="tbody-tr-th">{maskValues(sale.valor)}</td>
                                 <td className="tbody-tr-th-edit-delete">
-                                    <img src={iconEdit} alt="Clique aqui para editar" />
+                                    <img src={iconEdit} alt="Clique aqui para editar"
+                                        onClick={() => handleEditSale(sale)}
+                                    />
                                     <img src={iconDelete} atl="Clique aqui para excluir" />
                                 </td>
                             </tr>

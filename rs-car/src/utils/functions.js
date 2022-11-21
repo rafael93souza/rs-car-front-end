@@ -35,6 +35,36 @@ export function validateCPF(cpf) {
     return { status: true, cpf };
 }
 
+export function validateValue(value) {
+    if (!value.trim()) {
+        return { status: false, message: "Preencha o campo do valor" };
+    }
+    const valueConvert = convertValuesIntoCents(value);
+    if (!valueConvert) {
+        return { status: false, message: "O campo valor deve ser preenchido" };
+    }
+    return { status: true, valueConvert };
+}
+
+export function validateDate(date) {
+    if (!date.trim()) {
+        return { status: false, message: "Informe uma data" };
+    }
+    if (date.length < 10) {
+        return { status: false, message: "Informe uma data no formato válido" };
+    }
+    const dateFormat = date.split("/").reverse().join("-") + "T20:00:00.000Z";
+
+    if (!checkDate(new Date(dateFormat))) {
+        return { status: false, message: "Informe uma data válida" };
+    }
+    return { status: true, dateFormat };
+}
+
+function checkDate(date) {
+    return date instanceof Date && !isNaN(date);
+}
+
 export function maskValues(value) {
     let valueTreat = `R$${(value / 100).toFixed(2).replace(".", ",")}`;
     valueTreat = valueTreat.replace(/(?=(\d{3})+(\D))\B/g, ".");
@@ -80,6 +110,47 @@ export function treatValuesInputStrings(e) {
     e = value;
     return e;
 }
+
+export function treatDateInput(e) {
+    let value = e.target.value;
+    e.target.maxLength = 10;
+    if (e.target.value.length < 6) {
+        value = value.replace(/\D/g, "");
+        value = value.replace(/^(\d{2})(\d)/, "$1/$2");
+    } else {
+        value = value.replace(/\D/g, "");
+        value = value.replace(/^(\d{2})(\d{2})(\d)/, "$1/$2/$3");
+    }
+    e.target.value = value;
+
+    return e.target.value;
+}
+
+export function treatValuesInput(e) {
+    let value = e.target.value;
+    value = value.replace(/\D/g, "");
+    value = value.replace(/(\d)(\d{2})$/, "$1,$2");
+    value = value.replace(/(?=(\d{3})+(\D))\B/g, ".");
+    value = "R$ " + value;
+    e.target.value = value;
+
+    return e.target.value;
+}
+
+export function convertValuesIntoCents(value) {
+    const valueTreat = value.split("");
+
+    let valueNumber = valueTreat.filter((value) => {
+        if (Number(value) || value === "0" || value === ",") return value;
+    });
+    if (!valueNumber.length) return false;
+
+    let valueCents = valueNumber.reduce((acum, value) => acum + value);
+    valueCents = valueCents.replace(",", ".");
+    valueCents = Number(valueCents * 100);
+    return valueCents;
+}
+
 
 export function editDataArray(array, id, data) {
     let localArray = [...array];

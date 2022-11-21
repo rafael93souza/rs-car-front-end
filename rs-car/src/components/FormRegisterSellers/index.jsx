@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import iconCloseModal from "../../assets/icons/icon-close-modal.svg"
+import iconCloseModal from "../../assets/icons/icon-close-modal.svg";
 import { useGlobal } from "../../Contexts/GlobalContexts";
 import { useSellers } from "../../Contexts/SellersContexts";
 import { editDataArray, maskCPF, treatValuesInputStrings, validateCPF, validateEmail } from "../../utils/functions";
-import { postSellersAll, putSellersAll } from "../../utils/request";
+import { postSeller, putSeller } from "../../utils/request";
 import "./style.css";
 
 function FormRegisterSeller({ seller }) {
@@ -40,12 +40,12 @@ function FormRegisterSeller({ seller }) {
         }
         try {
             if (seller) {
-                const response = await putSellersAll(seller.id, data);
+                const response = await putSeller(seller.id, data);
                 const newData = editDataArray(sellers, seller.id, response.data[0])
                 setSellers(newData)
                 setSuccessCard("Vendedor atualizado com sucesso")
             } else {
-                const response = await postSellersAll(data);
+                const response = await postSeller(data);
                 setSellers([response.data[0], ...sellers])
                 setSuccessCard("Vendedor cadastrado com sucesso")
             }
