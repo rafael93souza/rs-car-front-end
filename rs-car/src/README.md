@@ -4,6 +4,8 @@
 
 Aplicação com o objetivo de disponibilizar aos administradores de uma consessionária possa gerir e controlar o seu negócio. 
 
+- [video de apresentação](https://youtu.be/dL-XaH6k4Jk)
+
 ## Requisitos
 
 - NodeJs v16.15.1
