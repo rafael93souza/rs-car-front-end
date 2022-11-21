@@ -6,12 +6,10 @@ export function getHeaders() {
     const headers = { authorization: `Bearer ${token}` };
     return headers;
 }
-
 export async function postLogin(data) {
     const response = await api.post("/login", { ...data });
     return response;
 }
-
 export async function getGraphicsSum() {
     const response = await api.get("/grafico/soma", { headers: getHeaders() });
     return response;
@@ -50,5 +48,13 @@ export async function postSale(data) {
 }
 export async function putSale(id, data) {
     const response = await api.put(`/venda/${id}`, { ...data }, { headers: getHeaders() });
+    return response;
+}
+export async function postCar(data) {
+    const response = await api.post("/carro", { ...data }, { headers: getHeaders() });
+    return response;
+}
+export async function putCar(id, data) {
+    const response = await api.put(`/carro/${id}`, { ...data }, { headers: getHeaders() });
     return response;
 }

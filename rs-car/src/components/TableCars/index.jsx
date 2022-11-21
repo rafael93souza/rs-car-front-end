@@ -3,9 +3,17 @@ import { maskValues } from "../../utils/functions";
 import iconEdit from "../../assets/icons/icon-pen-edit.svg";
 import iconDelete from "../../assets/icons/icon-trash-can.svg";
 import "./style.css";
+import { useGlobal } from "../../Contexts/GlobalContexts";
+import FormRegisterCars from "../FormRegisterCars";
 
 function TableCars() {
     const { cars, setCars, setCar } = useCars()
+    const { setComponentModal, setShowModal } = useGlobal()
+
+    function handleEditCars(car) {
+        setComponentModal(<FormRegisterCars car={car} />)
+        setShowModal(true)
+    }
 
     return (
         <div className="container-table-cars">
@@ -34,7 +42,8 @@ function TableCars() {
                                 <td className="tbody-tr-th-cod">{car.placa}</td>
                                 <td className="tbody-tr-th">{maskValues(car.preco)}</td>
                                 <td className="tbody-tr-th-edit-delete">
-                                    <img src={iconEdit} alt="Clique aqui para editar" />
+                                    <img src={iconEdit} alt="Clique aqui para editar"
+                                        onClick={() => handleEditCars(car)} />
                                     <img src={iconDelete} atl="Clique aqui para excluir" />
                                 </td>
                             </tr>

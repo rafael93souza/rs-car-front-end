@@ -71,6 +71,23 @@ export function maskValues(value) {
     return valueTreat;
 }
 
+export function maskYear(e) {
+    let value = e.target.value;
+    e.target.maxLength = 4;
+    value = value.replace(/\D/g, "");
+    e.target.value = value
+    return e.target.value;
+}
+export function maskBoard(e) {
+    let value = e.target.value;
+    e.target.maxLength = 8;
+    value = value.replace(/[^a-z0-9]/gi, '');
+    value = value.replace(/^(\w{3})(\w)/g, "$1-$2");
+    e.target.value = value
+    return e.target.value.toUpperCase();
+}
+
+
 export function formatDateLong(date) {
     const formatterDate = Intl.DateTimeFormat("pt-BR", {
         year: "numeric",
