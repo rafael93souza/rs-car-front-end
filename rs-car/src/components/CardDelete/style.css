@@ -1,0 +1,119 @@
+.form-modal-register-sellers {
+    margin: auto;
+    width: 600px;
+    height: auto;
+    background-color: var(--color-scale-gray-11);
+    color: var(--color-scale-gray-1);
+    border-radius: 3rem;
+    padding: 4rem 5.5rem;
+    gap: 2rem;
+    position: relative;
+}
+
+
+.form-modal-title {
+    font-weight: 600;
+    font-size: 2.6rem;
+    line-height: 130%;
+    margin-left: 1.6rem;
+    margin-bottom: 1.6rem;
+    color: var(--color-scale-gray-2);
+}
+
+.icon-close-modal {
+    position: absolute;
+    right: 2.4rem;
+    top: 2.4rem;
+    cursor: pointer;
+}
+
+.div-input-register-sellers {
+    gap: 0.2rem;
+    margin-top: 3rem;
+}
+
+.input-register-sellers {
+    all: unset;
+    box-sizing: border-box;
+    height: 4rem;
+    font-size: 1.6rem;
+    background-color: var(--color-scale-gray-8);
+    border-radius: 1rem;
+    padding: 0 2rem;
+    border: 0.1rem solid var(--color-scale-gray-7);
+}
+
+.input-register-sellers:focus {
+    border: 0.1rem solid var(--color-secundary-2);
+}
+
+.label-register-sellers {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.btn-register-sellers {
+    all: unset;
+    border-radius: 2rem;
+    padding: 0.5rem 2rem;
+    width: 50%;
+    font-size: 1.6rem;
+    text-align: center;
+    background-color: var(--color-secundary-2);
+    color: var(--color-scale-gray-10);
+    cursor: pointer;
+    margin: auto;
+}
+
+.div-button-register-sellers {
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.btn-form {
+    all: unset;
+    cursor: pointer;
+    width: 250px;
+    height: 40px;
+    text-align: center;
+    font-size: 1.6rem;
+    border-radius: 1.5rem;
+    background-color: var(--color-secundary-2);
+    color: var(--color-scale-gray-10);
+    box-shadow: 0.1rem 0.1rem 0.1rem var(--color-scale-gray-8);
+    transition: 0.2s;
+    margin: 4rem auto;
+}
+
+.btn-form:hover {
+    background-color: var(--color-secundary-1);
+}
+
+.btn-form-cancel {
+    all: unset;
+    cursor: pointer;
+    width: 250px;
+    height: 40px;
+    text-align: center;
+    font-size: 1.6rem;
+    border-radius: 1.5rem;
+    background-color: var(--color-scale-gray-4);
+    color: var(--color-scale-gray-10);
+    box-shadow: 0.1rem 0.1rem 0.1rem var(--color-scale-gray-8);
+    transition: 0.2s;
+    margin: 4rem auto;
+}
+
+.btn-form-cancel:hover {
+    background-color: var(--color-scale-gray-6);
+}
+
+.div-btn-delete {
+    gap: 3rem;
+}
+
+.p-delete {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}

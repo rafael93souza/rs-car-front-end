@@ -4,8 +4,13 @@ import logOutIcon from "../../assets/icons/icon-logout.svg";
 import { clear, getItem } from "../../utils/storage";
 import { NavLink, useNavigate, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
+import ModalForm from "../ModalForm";
+import { useGlobal } from "../../Contexts/GlobalContexts";
+import ErrorCard from "../ErrorCard";
+import SuccessFullCard from "../SuccessFullCard";
 
 function Header() {
+    const { showModal, errorCard, successCard } = useGlobal();
     const [name, setName] = useState("");
     const navigate = useNavigate();
 
@@ -20,6 +25,7 @@ function Header() {
     return (
         <div>
             <header className="header">
+                {showModal && <ModalForm />}
                 <img className="image-header" src={logoHeader} alt="Imagem do logo RS CAR" />
                 <ul className="nav-ul-header flex-row">
                     <NavLink
@@ -60,6 +66,10 @@ function Header() {
                 />
             </header>
             <Outlet />
+            <div className='div-error-success-sign-in'>
+                {errorCard && <ErrorCard pag='sign-in' />}
+                {successCard && <SuccessFullCard pag='sign-in' />}
+            </div>
         </div>
     )
 }

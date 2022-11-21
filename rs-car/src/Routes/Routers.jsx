@@ -1,5 +1,6 @@
 import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import Header from "../components/Header";
+import { CarsProvider } from "../Contexts/CarsContexts";
 import { GlobalProvider } from "../Contexts/GlobalContexts";
 import { SalesProvider } from "../Contexts/SalesContexts";
 import { SellersProvider } from "../Contexts/SellersContexts";
@@ -26,26 +27,28 @@ function Routers() {
         <GlobalProvider>
             <SellersProvider>
                 <SalesProvider>
-                    <Routes>
-                        <Route element={<VerifyLoginUser redirectTo='/dashboard' />}>
-                            <Route path="/" element={<SignIn />} />
-                            <Route path="/sign-in" element={<SignIn />} />
-                        </Route>
-                        <Route element={<ProtectedRoutes redirectTo='/sign-in' />} >
-                            <Route path="/dashboard" element={<Header />} >
-                                <Route path="" element={<Dashboard />} />
+                    <CarsProvider>
+                        <Routes>
+                            <Route element={<VerifyLoginUser redirectTo='/dashboard' />}>
+                                <Route path="/" element={<SignIn />} />
+                                <Route path="/sign-in" element={<SignIn />} />
                             </Route>
-                            <Route path="/carros" element={<Header />} >
-                                <Route path="" element={<Cars />} />
+                            <Route element={<ProtectedRoutes redirectTo='/sign-in' />} >
+                                <Route path="/dashboard" element={<Header />} >
+                                    <Route path="" element={<Dashboard />} />
+                                </Route>
+                                <Route path="/carros" element={<Header />} >
+                                    <Route path="" element={<Cars />} />
+                                </Route>
+                                <Route path="/vendas" element={<Header />} >
+                                    <Route path="" element={<Sales />} />
+                                </Route>
+                                <Route path="/vendedores" element={<Header />} >
+                                    <Route path="" element={<Sellers />} />
+                                </Route>
                             </Route>
-                            <Route path="/vendas" element={<Header />} >
-                                <Route path="" element={<Sales />} />
-                            </Route>
-                            <Route path="/vendedores" element={<Header />} >
-                                <Route path="" element={<Sellers />} />
-                            </Route>
-                        </Route>
-                    </Routes>
+                        </Routes>
+                    </CarsProvider>
                 </SalesProvider>
             </SellersProvider>
         </GlobalProvider>

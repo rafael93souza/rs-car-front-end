@@ -1,0 +1,15 @@
+.modal {
+    width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    padding: 6.8rem 0rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: rgba(43, 44, 44, 0.3);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+}
