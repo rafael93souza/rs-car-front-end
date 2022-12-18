@@ -2,7 +2,10 @@
 
 ## RS CAR - Front-end
 
-Aplicação com o objetivo de disponibilizar aos administradores de uma consessionária possa gerir e controlar o seu negócio. 
+Esse projeto foi realizado como teste técnico em uma aplicação para vaga de desenvolvedor full stack.
+
+Aplicação com o objetivo de disponibilizar aos administradores de uma consessionária (RS Car) possam gerir e controlar o seu negócio. 
+Desde os carros, as vendas e os funcionários da empresa, os gráficos mostrar visualmente de forma clara os resultados. 
 
 - [video de apresentação](https://youtu.be/dL-XaH6k4Jk)
 
