@@ -91,7 +91,8 @@ De inicio temos 3 Cards contendo Quantidade em R$ de vendas, quantidade de carro
 ###Mas abaixo você encontrará outros gráficos 
 
 <img style="width:500px" src="https://rs-car.s3.us-west-004.backblazeb2.com/images/imagem-grafico-vendas-funcionario.png"/> <img style="width:500px" src="https://rs-car.s3.us-west-004.backblazeb2.com/images/imagem-grafico-vendas-meses.png"/>
-Quantidade de vendas por vendedores em R$ / Quantidade de vendas nos ultimos meses em R$
+Quantidade de vendas por vendedores em reais /  
+Quantidade de vendas nos ultimos meses em reais
 </br>
 
 <img style="width:500px" src="https://rs-car.s3.us-west-004.backblazeb2.com/images/imagem-grafico-vendas-carros.png"/> <img style="width:500px" src="https://rs-car.s3.us-west-004.backblazeb2.com/images/imagem-grafico-vendas-media.png"/>
